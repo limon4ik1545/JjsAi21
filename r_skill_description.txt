@@ -1,0 +1,47 @@
+R-Skill Description: Player Swap
+================================
+
+Name: R - Position Swap (Camera Direction Swap)
+
+Type: Utility / Tactical Movement
+
+Description:
+This skill instantly swaps the positions of the user and the target player. 
+When activated, both players exchange their current coordinates on the map.
+
+Key Mechanics:
+1. Position Exchange:
+   - User moves to target's location.
+   - Target moves to user's previous location.
+   - Distance between players does not affect activation (global range).
+
+2. Camera Direction:
+   - The camera direction also swaps relative to the new positions.
+   - After the swap, the user's view aligns with the direction the target was facing.
+   - This can be used to disorient opponents or quickly reposition for an attack.
+
+3. Cooldown:
+   - Moderate cooldown period (approx. 10-15 seconds depending on game balance).
+
+4. Strategic Uses:
+   - Escape: Swap with an ally to escape danger.
+   - Engage: Swap with an enemy to pull them into a disadvantageous position.
+   - Confusion: Disorient enemies by swapping during combat to change camera angles.
+   - Teamplay: Coordinate with teammates to confuse opponents or set up combos.
+
+Visual Indicators:
+- A distinct visual effect (e.g., flash or particle swirl) appears at both locations.
+- The camera smoothly transitions to the new perspective after the swap.
+
+Notes for AI Training:
+- Look for sudden changes in player coordinates without intermediate movement frames.
+- Detect rapid camera angle shifts coinciding with position changes.
+- Identify visual effects associated with the swap animation.
+- Track two entities exchanging positions simultaneously.
+
+Example Scenario:
+Player A (User) is at (X:100, Y:200). Player B (Target) is at (X:500, Y:600).
+After activating R-skill:
+- Player A moves instantly to (X:500, Y:600).
+- Player B moves instantly to (X:100, Y:200).
+- Both players' camera directions adjust to face the new orientation.
