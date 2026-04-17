@@ -230,14 +230,20 @@ def train_model(config):
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', patience=5, factor=0.5)
     
     # Create data directories if they don't exist
-    os.makedirs('videos', exist_ok=True)
-    os.makedirs('labels', exist_ok=True)
-    os.makedirs('models', exist_ok=True)
-    os.makedirs('logs', exist_ok=True)
+    script_dir = Path(__file__).parent
+    videos_dir = script_dir / 'videos'
+    labels_dir = script_dir / 'labels'
+    models_dir = script_dir / 'models'
+    logs_dir = script_dir / 'logs'
+    
+    os.makedirs(videos_dir, exist_ok=True)
+    os.makedirs(labels_dir, exist_ok=True)
+    os.makedirs(models_dir, exist_ok=True)
+    os.makedirs(logs_dir, exist_ok=True)
     
     # Check for training data
-    video_dir = Path('videos')
-    label_dir = Path('labels')
+    video_dir = videos_dir
+    label_dir = labels_dir
     
     video_paths = list(video_dir.glob('*.mp4')) + list(video_dir.glob('*.avi'))
     label_paths = [label_dir / f.with_suffix('.json').name for f in video_paths]
@@ -426,7 +432,7 @@ if __name__ == '__main__':
         'batch_size': 4,
         'learning_rate': 0.001,
         'num_epochs': 50,
-        'r_skill_config': 'config/r_skill_description.txt'
+        'r_skill_config': 'r_skill_description.txt'
     }
     
     # Override with config file if exists

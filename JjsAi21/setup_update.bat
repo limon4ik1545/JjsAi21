@@ -32,7 +32,7 @@ if %errorlevel% neq 0 (
 echo.
 
 echo [4/4] Verifying installation...
-python -c "import torch, torchvision, opencv-python, numpy; print('All libraries imported successfully!')"
+python -c "import torch, torchvision, cv2, numpy; print('All libraries imported successfully!')"
 if %errorlevel% neq 0 (
     echo WARNING: Some libraries might not be installed correctly.
     echo Please check the error messages above.
@@ -45,7 +45,7 @@ echo ========================================
 echo.
 echo Next steps:
 echo 1. Place your training videos in the 'videos' folder.
-echo 2. Run 'run_training.bat' to start training the AI.
-echo 3. Run 'run_analysis.bat' to analyze new gameplay footage.
+echo 2. Run 'start_training.bat' to start training the AI.
+echo 3. Run 'start_ai.bat' to analyze new gameplay footage.
 echo.
 pause
