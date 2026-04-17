@@ -37,11 +37,11 @@ set /p VIDEO_PATH="Enter path to video file for analysis (or press Enter for def
 
 if "%VIDEO_PATH%"=="" (
     REM Check for sample video
-    if exist "data\videos\sample_gameplay.mp4" (
-        set VIDEO_PATH=data\videos\sample_gameplay.mp4
+    if exist "videos\sample_gameplay.mp4" (
+        set VIDEO_PATH=videos\sample_gameplay.mp4
     ) else (
         echo [ERROR] No video path provided and no sample video found
-        echo Please provide a video path or add a video to data\videos\
+        echo Please provide a video path or add a video to videos\
         pause
         exit /b 1
     )

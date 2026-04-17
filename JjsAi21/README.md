@@ -49,12 +49,17 @@ python main.py
 ### Usage / Использование
 
 1. Prepare training videos of Jujutsu Shenanigans gameplay / Подготовьте обучающие видео с геймплеем Jujutsu Shenanigans
-2. Label your videos using the labeling tool / Разметьте видео с помощью инструмента разметки:
+2. Place videos in the `videos/` folder / Поместите видео в папку `videos/`
+3. Label your videos using the labeling tool / Разметьте видео с помощью инструмента разметки:
    ```bash
-   python label_generator.py data/videos/your_video.mp4
+   python label_generator.py videos/your_video.mp4
    ```
-3. Configure settings in `config/training_config.json` / Настройте параметры в `config/training_config.json`
-4. Start the training process / Запустите процесс обучения:
+4. Update dependencies (optional) / Обновить зависимости (опционально):
+   ```bash
+   # Windows
+   setup_update.bat
+   ```
+5. Start the training process / Запустите процесс обучения:
    ```bash
    # Windows
    start_training.bat
@@ -62,7 +67,7 @@ python main.py
    # Linux/Mac
    python train.py --mode train
    ```
-5. Analyze videos with trained AI / Анализируйте видео с помощью обученного ИИ:
+6. Analyze videos with trained AI / Анализируйте видео с помощью обученного ИИ:
    ```bash
    # Windows
    start_ai.bat
@@ -79,16 +84,13 @@ JjsAi21/
 ├── train.py                  # Main AI training and analysis module
 ├── label_generator.py        # Tool for labeling training videos
 ├── requirements.txt          # Python dependencies
+├── setup_update.bat          # Windows script to update pip and install libraries
 ├── start_training.bat        # Windows launcher for training
 ├── start_ai.bat              # Windows launcher for AI analysis
+├── r_skill_description.txt   # R-skill configuration (Player Swap)
 │
-├── config/
-│   ├── training_config.json  # Training hyperparameters
-│   └── r_skill_description.txt # R-skill configuration
-│
-├── data/
-│   ├── videos/               # Place training videos here
-│   └── labels/               # Label files (JSON)
+├── videos/                   # Place training videos here
+├── labels/                   # Label files (JSON) - created automatically
 │
 ├── models/
 │   └── best_model.pth        # Trained model weights
@@ -153,12 +155,17 @@ python main.py
 ### Использование
 
 1. Подготовьте обучающие видео с геймплеем Jujutsu Shenanigans
-2. Разметьте видео с помощью инструмента разметки:
+2. Поместите видео в папку `videos/`
+3. Разметьте видео с помощью инструмента разметки:
    ```bash
-   python label_generator.py data/videos/your_video.mp4
+   python label_generator.py videos/your_video.mp4
    ```
-3. Настройте параметры в `config/training_config.json`
-4. Запустите процесс обучения:
+4. Обновить зависимости (опционально):
+   ```bash
+   # Windows
+   setup_update.bat
+   ```
+5. Запустите процесс обучения:
    ```bash
    # Windows
    start_training.bat
@@ -166,7 +173,7 @@ python main.py
    # Linux/Mac
    python train.py --mode train
    ```
-5. Анализируйте видео с помощью обученного ИИ:
+6. Анализируйте видео с помощью обученного ИИ:
    ```bash
    # Windows
    start_ai.bat
@@ -183,16 +190,13 @@ JjsAi21/
 ├── train.py                  # Основной модуль обучения и анализа ИИ
 ├── label_generator.py        # Инструмент для разметки обучающих видео
 ├── requirements.txt          # Python зависимости
+├── setup_update.bat          # Скрипт обновления pip и установки библиотек (Windows)
 ├── start_training.bat        # Запуск обучения (Windows)
 ├── start_ai.bat              # Запуск анализа ИИ (Windows)
+├── r_skill_description.txt   # Описание R-скилла (Свап позиций)
 │
-├── config/
-│   ├── training_config.json  # Параметры обучения
-│   └── r_skill_description.txt # Описание R-скилла
-│
-├── data/
-│   ├── videos/               # Обучающие видео
-│   └── labels/               # Файлы разметки (JSON)
+├── videos/                   # Обучающие видео
+├── labels/                   # Файлы разметки (JSON) - создаётся автоматически
 │
 ├── models/
 │   └── best_model.pth        # Веса обученной модели
