@@ -45,8 +45,8 @@ echo [INFO] All dependencies checked
 echo.
 
 REM Create necessary directories
-if not exist "data\videos" mkdir data\videos
-if not exist "data\labels" mkdir data\labels
+if not exist "videos" mkdir videos
+if not exist "labels" mkdir labels
 if not exist "models" mkdir models
 if not exist "logs" mkdir logs
 
@@ -54,12 +54,12 @@ echo [INFO] Directories ready
 echo.
 
 REM Check for training data
-if not exist "data\videos\*.mp4" (
-    if not exist "data\videos\*.avi" (
-        echo [WARNING] No training videos found in data\videos directory
+if not exist "videos\*.mp4" (
+    if not exist "videos\*.avi" (
+        echo [WARNING] No training videos found in videos directory
         echo.
-        echo Please add gameplay videos to: data\videos
-        echo And corresponding label files to: data\labels
+        echo Please add gameplay videos to: videos
+        echo And corresponding label files to: labels
         echo.
         echo Example label format (JSON):
         echo {
@@ -77,7 +77,7 @@ echo ============================================
 echo.
 
 REM Run training
-python train.py --mode train --config config/training_config.json
+python train.py --mode train --config training_config.json
 
 if errorlevel 1 (
     echo.

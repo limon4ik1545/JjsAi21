@@ -164,7 +164,7 @@ class GameplayDataset(Dataset):
         return frames_tensor, label_tensor
 
 
-def load_r_skill_description(config_path='config/r_skill_description.txt'):
+def load_r_skill_description(config_path='r_skill_description.txt'):
     """
     Load and parse the R-skill description from config file.
     """
@@ -214,7 +214,7 @@ def train_model(config):
     logger.info(f"Using device: {device}")
     
     # Load R-skill configuration
-    r_skill_config = load_r_skill_description(config.get('r_skill_config', 'config/r_skill_description.txt'))
+    r_skill_config = load_r_skill_description(config.get('r_skill_config', 'r_skill_description.txt'))
     logger.info(f"R-skill configuration loaded: {list(r_skill_config.keys())}")
     
     # Initialize model
@@ -230,13 +230,14 @@ def train_model(config):
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', patience=5, factor=0.5)
     
     # Create data directories if they don't exist
-    os.makedirs('data/videos', exist_ok=True)
-    os.makedirs('data/labels', exist_ok=True)
+    os.makedirs('videos', exist_ok=True)
+    os.makedirs('labels', exist_ok=True)
     os.makedirs('models', exist_ok=True)
+    os.makedirs('logs', exist_ok=True)
     
     # Check for training data
-    video_dir = Path('data/videos')
-    label_dir = Path('data/labels')
+    video_dir = Path('videos')
+    label_dir = Path('labels')
     
     video_paths = list(video_dir.glob('*.mp4')) + list(video_dir.glob('*.avi'))
     label_paths = [label_dir / f.with_suffix('.json').name for f in video_paths]
