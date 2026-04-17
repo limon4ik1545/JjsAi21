@@ -1,0 +1,31 @@
+{
+  "num_classes": 10,
+  "hidden_size": 256,
+  "num_layers": 2,
+  "seq_length": 16,
+  "batch_size": 4,
+  "learning_rate": 0.001,
+  "num_epochs": 50,
+  "r_skill_config": "config/r_skill_description.txt",
+  
+  "action_labels": {
+    "0": "idle",
+    "1": "walk_forward",
+    "2": "walk_backward",
+    "3": "jump",
+    "4": "crouch",
+    "5": "light_attack",
+    "6": "heavy_attack",
+    "7": "skill_q",
+    "8": "skill_r",
+    "9": "skill_e"
+  },
+  
+  "detection_settings": {
+    "confidence_threshold": 0.85,
+    "min_sequence_length": 8,
+    "track_players": true,
+    "detect_skills": true,
+    "log_predictions": true
+  }
+}
