@@ -36,7 +36,7 @@ REM Get video file from user
 set /p VIDEO_PATH="Enter path to video file for analysis (or press Enter for default): "
 
 if "%VIDEO_PATH%"=="" (
-    REM Check for sample video
+    REM Check for sample video in videos folder
     if exist "videos\sample_gameplay.mp4" (
         set VIDEO_PATH=videos\sample_gameplay.mp4
     ) else (

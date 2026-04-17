@@ -53,9 +53,11 @@ if not exist "logs" mkdir logs
 echo [INFO] Directories ready
 echo.
 
-REM Check for training data
-if not exist "videos\*.mp4" (
-    if not exist "videos\*.avi" (
+REM Check for training data in videos folder
+dir /b videos\*.mp4 >nul 2>&1
+if %errorlevel% neq 0 (
+    dir /b videos\*.avi >nul 2>&1
+    if %errorlevel% neq 0 (
         echo [WARNING] No training videos found in videos directory
         echo.
         echo Please add gameplay videos to: videos
