@@ -46,23 +46,56 @@ pip install -r requirements.txt
 python main.py
 ```
 
-### Usage
+### Usage / Использование
 
-1. Prepare training videos of Jujutsu Shenanigans gameplay
-2. Configure settings in `config.yaml`
-3. Start the training process
-4. Deploy the trained model for automated gameplay
+1. Prepare training videos of Jujutsu Shenanigans gameplay / Подготовьте обучающие видео с геймплеем Jujutsu Shenanigans
+2. Label your videos using the labeling tool / Разметьте видео с помощью инструмента разметки:
+   ```bash
+   python label_generator.py data/videos/your_video.mp4
+   ```
+3. Configure settings in `config/training_config.json` / Настройте параметры в `config/training_config.json`
+4. Start the training process / Запустите процесс обучения:
+   ```bash
+   # Windows
+   start_training.bat
+   
+   # Linux/Mac
+   python train.py --mode train
+   ```
+5. Analyze videos with trained AI / Анализируйте видео с помощью обученного ИИ:
+   ```bash
+   # Windows
+   start_ai.bat
+   
+   # Linux/Mac
+   python train.py --mode analyze --video path/to/video.mp4
+   ```
 
-### Project Structure
+### Project Structure / Структура Проекта
 
 ```
 JjsAi21/
-├── main.py          # Main entry point
-├── config.yaml      # Configuration file
-├── requirements.txt # Python dependencies
-├── src/             # Source code
-├── models/          # Trained AI models
-└── videos/          # Training video data
+├── README.md                 # Project documentation (EN/RU)
+├── train.py                  # Main AI training and analysis module
+├── label_generator.py        # Tool for labeling training videos
+├── requirements.txt          # Python dependencies
+├── start_training.bat        # Windows launcher for training
+├── start_ai.bat              # Windows launcher for AI analysis
+│
+├── config/
+│   ├── training_config.json  # Training hyperparameters
+│   └── r_skill_description.txt # R-skill configuration
+│
+├── data/
+│   ├── videos/               # Place training videos here
+│   └── labels/               # Label files (JSON)
+│
+├── models/
+│   └── best_model.pth        # Trained model weights
+│
+└── logs/
+    ├── training.log          # Training process logs
+    └── analysis_results_*.json # Video analysis results
 ```
 
 ### License
@@ -120,20 +153,53 @@ python main.py
 ### Использование
 
 1. Подготовьте обучающие видео с геймплеем Jujutsu Shenanigans
-2. Настройте параметры в `config.yaml`
-3. Запустите процесс обучения
-4. Разверните обученную модель для автоматизированного геймплея
+2. Разметьте видео с помощью инструмента разметки:
+   ```bash
+   python label_generator.py data/videos/your_video.mp4
+   ```
+3. Настройте параметры в `config/training_config.json`
+4. Запустите процесс обучения:
+   ```bash
+   # Windows
+   start_training.bat
+   
+   # Linux/Mac
+   python train.py --mode train
+   ```
+5. Анализируйте видео с помощью обученного ИИ:
+   ```bash
+   # Windows
+   start_ai.bat
+   
+   # Linux/Mac
+   python train.py --mode analyze --video path/to/video.mp4
+   ```
 
 ### Структура проекта
 
 ```
 JjsAi21/
-├── main.py          # Точка входа
-├── config.yaml      # Файл конфигурации
-├── requirements.txt # Python зависимости
-├── src/             # Исходный код
-├── models/          # Обученные модели ИИ
-└── videos/          # Данные обучающих видео
+├── README.md                 # Документация проекта (EN/RU)
+├── train.py                  # Основной модуль обучения и анализа ИИ
+├── label_generator.py        # Инструмент для разметки обучающих видео
+├── requirements.txt          # Python зависимости
+├── start_training.bat        # Запуск обучения (Windows)
+├── start_ai.bat              # Запуск анализа ИИ (Windows)
+│
+├── config/
+│   ├── training_config.json  # Параметры обучения
+│   └── r_skill_description.txt # Описание R-скилла
+│
+├── data/
+│   ├── videos/               # Обучающие видео
+│   └── labels/               # Файлы разметки (JSON)
+│
+├── models/
+│   └── best_model.pth        # Веса обученной модели
+│
+└── logs/
+    ├── training.log          # Логи процесса обучения
+    └── analysis_results_*.json # Результаты анализа видео
 ```
 
 ### Лицензия

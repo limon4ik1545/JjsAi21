@@ -1,0 +1,40 @@
+# R-Skill Description Configuration
+# This file describes the "R" special skill for Jujutsu Shenanigans AI training
+
+Skill Name: R
+Skill Type: Special Attack
+Description: |
+  The "R" skill is a character-specific special ability in Jujutsu Shenanigans.
+  It typically involves a powerful attack or technique unique to the character.
+  
+Visual Characteristics:
+  - Distinctive animation pattern
+  - Specific particle effects
+  - Unique sound cues (if audio analysis is enabled)
+  - Character-specific movement during activation
+  
+Activation Indicators:
+  - Character enters specific stance
+  - Visual glow or aura appears
+  - Rapid movement towards target
+  - Screen shake or camera effects
+  
+Usage Context:
+  - Often used as a finisher combo
+  - Can be used for zoning or area control
+  - Effective in close to mid-range combat
+  
+Training Notes:
+  - Look for the characteristic animation frames
+  - Track the particle effect color and shape
+  - Monitor the cooldown period after usage
+  - Note the damage output and hit registration
+
+Example Scenarios:
+  1. Combo extension into R skill
+  2. Counter-attack using R skill
+  3. Zone control with R skill area effect
+  4. Punish opponent's mistake with R skill
+
+Detection Priority: HIGH
+Confidence Threshold: 0.85
